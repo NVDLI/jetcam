@@ -16,7 +16,8 @@ class USBCamera(Camera):
     def __init__(self, *args, **kwargs):
         super(USBCamera, self).__init__(*args, **kwargs)
         try:
-            self.cap = cv2.VideoCapture(self._gst_str(), cv2.CAP_GSTREAMER)
+            # self.cap = cv2.VideoCapture(self._gst_str(), cv2.CAP_GSTREAMER)
+            self.cap = cv2.VideoCapture(self.capture_device)
 
             re , image = self.cap.read()
             
